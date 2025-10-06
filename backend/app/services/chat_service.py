@@ -84,7 +84,7 @@ class ChatService:
         role: str = "user",
         message_type: str = "text",
         tokens_used: int = 0,
-        model_used: Optional[str] = None,
+        ai_model: Optional[str] = None,
         citations: Optional[List[Dict[str, Any]]] = None,
         sources_used: Optional[List[str]] = None,
         metadata: Optional[Dict[str, Any]] = None
@@ -98,7 +98,7 @@ class ChatService:
             role=role,
             message_type=message_type,
             tokens_used=tokens_used,
-            model_used=model_used,
+            ai_model=ai_model,
             citations=citations,
             sources_used=sources_used,
             metadata=metadata

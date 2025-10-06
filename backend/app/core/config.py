@@ -4,10 +4,15 @@ Core configuration settings
 
 import os
 from typing import List, Optional
-from pydantic import BaseSettings, validator
+from pydantic_settings import BaseSettings
+from pydantic import validator
 
 class CoreSettings(BaseSettings):
     """Core application settings"""
+    
+    # Environment
+    ENVIRONMENT: str = "development"
+    DEBUG: bool = True
     
     # Security
     SECRET_KEY: str = "your-secret-key-change-this-in-production"

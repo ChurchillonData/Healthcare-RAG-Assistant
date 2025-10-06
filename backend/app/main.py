@@ -10,8 +10,8 @@ import time
 import logging
 
 from app.api.v1.router import api_router
-from app.core.config import settings
-from app.core.logging import setup_logging
+from app.config import settings
+from app.core.logger import setup_logging
 from app.database import engine
 from app.models import Base
 

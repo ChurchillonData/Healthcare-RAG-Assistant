@@ -11,7 +11,7 @@ from sqlalchemy import and_, desc, func
 
 from app.models.citation import Citation
 from app.schemas.citation import CitationCreate, CitationVerification
-from app.core.logging import get_logger
+from app.core.logger import get_logger
 
 logger = get_logger(__name__)
 

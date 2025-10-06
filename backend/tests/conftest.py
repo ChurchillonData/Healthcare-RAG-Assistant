@@ -12,7 +12,7 @@ from sqlalchemy.pool import StaticPool
 
 from app.main import app
 from app.database import get_db, Base
-from app.core.config import settings
+from app.config import settings
 from app.services.auth_service import AuthService
 from app.models.user import User
 

@@ -10,7 +10,7 @@ from jose import JWTError, jwt
 
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate
-from app.core.config import settings
+from app.config import settings
 from app.core.security import verify_password, get_password_hash, create_access_token
 
 class AuthService:

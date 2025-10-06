@@ -4,7 +4,8 @@ Application configuration settings
 
 import os
 from typing import List, Optional
-from pydantic import BaseSettings, validator
+from pydantic_settings import BaseSettings
+from pydantic import validator
 
 class Settings(BaseSettings):
     """Application settings"""
@@ -49,13 +50,13 @@ class Settings(BaseSettings):
     
     @validator("ALLOWED_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v):
-        if isinstance(v, str):
+        if isinstance(v, str) and not v.startswith('['):
             return [i.strip() for i in v.split(",")]
         return v
     
     @validator("ALLOWED_HOSTS", pre=True)
     def assemble_allowed_hosts(cls, v):
-        if isinstance(v, str):
+        if isinstance(v, str) and not v.startswith('['):
             return [i.strip() for i in v.split(",")]
         return v
     

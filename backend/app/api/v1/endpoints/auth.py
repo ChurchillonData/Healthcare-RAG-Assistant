@@ -11,7 +11,7 @@ from app.database import get_db
 from app.api.deps import get_current_active_user
 from app.schemas.user import UserCreate, UserResponse, Token
 from app.services.auth_service import AuthService
-from app.core.config import settings
+from app.config import settings
 
 router = APIRouter()
 

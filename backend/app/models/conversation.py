@@ -52,15 +52,15 @@ class Message(Base):
     
     # AI-specific fields
     tokens_used = Column(Integer, default=0, nullable=False)
-    model_used = Column(String(100), nullable=True)
+    ai_model = Column(String(100), nullable=True)
     temperature = Column(Integer, nullable=True)  # Temperature used for generation
     
     # Citations and sources
     citations = Column(JSON, nullable=True)  # Array of citation IDs
     sources_used = Column(JSON, nullable=True)  # Array of source document IDs
     
-    # Metadata
-    metadata = Column(JSON, nullable=True)  # Additional message metadata
+    # Additional data
+    additional_data = Column(JSON, nullable=True)  # Additional message metadata
     
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -10,7 +10,7 @@ from sqlalchemy import and_, desc, func
 from app.models.query import SearchQuery
 from app.schemas.search import SearchRequest, SearchFilters
 from app.services.rag_service import RAGService
-from app.core.logging import get_logger
+from app.core.logger import get_logger
 
 logger = get_logger(__name__)
 

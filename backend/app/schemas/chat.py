@@ -33,7 +33,7 @@ class ChatResponse(BaseModel):
     citations: List[Dict[str, Any]] = []
     conversation_id: Optional[uuid.UUID] = None
     tokens_used: Optional[int] = None
-    model_used: Optional[str] = None
+    ai_model: Optional[str] = None
     response_time_ms: Optional[int] = None
 
 class ConversationCreate(BaseModel):
@@ -79,7 +79,7 @@ class MessageResponse(BaseModel):
     role: str
     message_type: str
     tokens_used: int
-    model_used: Optional[str] = None
+    ai_model: Optional[str] = None
     temperature: Optional[int] = None
     citations: Optional[List[Dict[str, Any]]] = None
     sources_used: Optional[List[str]] = None

@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app.database import get_db
-from app.core.config import settings
+from app.config import settings
 
 router = APIRouter()
 

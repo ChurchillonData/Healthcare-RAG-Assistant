@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.api.deps import get_current_active_user, get_optional_current_user
-from app.schemas.chat import ChatRequest, ChatResponse, ConversationCreate, ConversationResponse
+from app.schemas.chat import ChatRequest, ChatResponse, ConversationCreate, ConversationResponse, MessageResponse
 from app.services.chat_service import ChatService
 from app.services.rag_service import RAGService
 from app.models.user import User

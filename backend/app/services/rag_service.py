@@ -7,8 +7,8 @@ from typing import List, Dict, Any, Optional
 import openai
 from openai import AsyncOpenAI
 
-from app.core.config import settings
-from app.core.logging import get_logger
+from app.config import settings
+from app.core.logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -103,7 +103,7 @@ class RAGService:
                 "response": response_content,
                 "citations": citations,
                 "tokens_used": response.usage.total_tokens,
-                "model_used": self.chat_model
+                "ai_model": self.chat_model
             }
             
         except Exception as e:
@@ -112,7 +112,7 @@ class RAGService:
                 "response": "I apologize, but I'm having trouble generating a response right now. Please try again later.",
                 "citations": [],
                 "tokens_used": 0,
-                "model_used": self.chat_model
+                "ai_model": self.chat_model
             }
     
     async def _get_embedding(self, text: str) -> List[float]:

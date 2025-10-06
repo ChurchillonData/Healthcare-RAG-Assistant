@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-stethoscope"></i>
+                    <h1>Healthcare AI Assistant</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                        Search Literature
+                    </button>
+                    <button class="btn btn-primary" id="chatToggle">
+                        <i class="fas fa-comments"></i>
+                        Chat Assistant
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Interface -->
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-robot"></i>
+                        <h2>AI Medical Assistant</h2>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <p class="chat-subtitle">Ask me any medical questions. I can help with research, citations, and healthcare information.</p>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Hello! I'm your Healthcare AI Assistant. I can help you with:
+                                <ul>
+                                    <li>Medical research questions</li>
+                                    <li>Literature search and citations</li>
+                                    <li>Healthcare information and guidance</li>
+                                    <li>Evidence-based medical insights</li>
+                                </ul>
+                                How can I assist you today?
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <textarea 
+                            id="chatInput" 
+                            placeholder="Ask a medical question or describe what you're looking for..."
+                            rows="1"
+                        ></textarea>
+                        <button class="send-button" id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        <span class="input-hint">
+                            <i class="fas fa-info-circle"></i>
+                            Powered by 200K+ PubMed research abstracts
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Interface -->
+            <div class="search-container" id="searchContainer" style="display: none;">
+                <div class="search-header">
+                    <div class="search-title">
+                        <i class="fas fa-search"></i>
+                        <h2>Medical Literature Search</h2>
+                    </div>
+                    <p class="search-subtitle">Search through 200K+ PubMed research abstracts and medical papers</p>
+                </div>
+
+                <div class="search-form">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Enter medical terms, conditions, treatments, or research topics..."
+                            class="search-input"
+                        >
+                        <button class="search-button" id="searchButton">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                    <div class="search-filters">
+                        <select id="yearFilter" class="filter-select">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="clinical">Clinical Studies</option>
+                            <option value="treatment">Treatment</option>
+                            <option value="diagnosis">Diagnosis</option>
+                            <option value="prevention">Prevention</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-results" id="searchResults">
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <p>Enter a search term to find relevant medical literature</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2024 Healthcare AI Assistant. Powered by advanced medical AI.</p>
+                    <div class="footer-links">
+                        <a href="#" id="aboutLink">About</a>
+                        <a href="#" id="privacyLink">Privacy</a>
+                        <a href="#" id="contactLink">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>Backend Connected</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Processing your request...</p>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
